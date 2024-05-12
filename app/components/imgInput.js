@@ -7,9 +7,9 @@ const ImgInput = (props) => {
         try{
             const data = new FormData()
             data.append("file", imageFile)
-            data.append("upload_preset", "YYYYY")
-            data.append("cloud_name","XXXXX")
-            const response= await fetch("https://api.cloudinary.com/v1_1/XXXXX/image/upload", {method: "POST", body: data})
+            data.append("upload_preset", "mcssxowg")
+            data.append("cloud_name","dft2waqt4")
+            const response= await fetch("https://api.cloudinary.com/v1_1/dft2waqt4/image/upload", {method: "POST", body: data})
             const jsonData = await response.json()
             await props.setImage(jsonData.url)
             alert("画像アップロード成功")

@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react" 
 import useAuth from "../../../utils/useAuth"
+import ImgInput from "../../../components/imgInput" 
 
 const UpdateItem = (context) => {
     const [image, setImage] = useState("")
@@ -69,6 +70,7 @@ const UpdateItem = (context) => {
         return (
             <div>
                 <h1 className="page-title">アイテム編集</h1>
+                <ImgInput setImage={setImage}/>
                 <form onSubmit={handleSubmit}>
                     <input value={favorteam} onChange={(e) => setFavorTeam(e.target.value)} type="text" name="favorteam" placeholder="好きなチーム名" required/>
                     <input value={favorplayer} onChange={(e) => setFavorPlayer(e.target.value)} type="text" name="favorplayer" placeholder="好きな選手名" required/>

@@ -16,7 +16,7 @@ const ReadAllItems = async() => {
                 <Link href={`/item/readsingle/${item._id}`} key={item._id}> 
                     <Image src={item.Image} width={750} height={500} alt="item-image" priority/>
                     <div> 
-                        <h2>好きなチームは: {item.FavorTeam}</h2>
+                        <h2>好きなチーム: {item.FavorTeam}</h2>
                         <h3>好きな選手: {item.FavorPlayer}</h3>
                         {/*<h3>{item.prefecture}</h3>
                         <h3>{item.email}</h3>*/}

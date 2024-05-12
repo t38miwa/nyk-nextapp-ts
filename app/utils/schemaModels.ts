@@ -2,7 +2,22 @@ import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
-const ItemSchema = new Schema({
+interface ItemDataType {
+    Image: string,
+    FavorTeam: string,
+    FavorPlayer: string,
+    prefecture: string,
+    description: string,
+    email: string
+}
+
+interface UserDataType {
+    name: string,
+    email: string,
+    password: string
+}
+
+const ItemSchema = new Schema<ItemDataType>({
     Image: String,
     FavorTeam: String,       
     FavorPlayer: String,
@@ -17,7 +32,7 @@ const ItemSchema = new Schema({
     description: String,
     email: String,*/}
 
-const UserSchema = new Schema({
+const UserSchema = new Schema<UserDataType>({
     name: {
         type: String,
         required: true
@@ -33,5 +48,5 @@ const UserSchema = new Schema({
     }
 })
 
-export const ItemModel = mongoose.models.Item || mongoose.model("Item", ItemSchema)
-export const UserModel = mongoose.models.User || mongoose.model("User", UserSchema)
+export const ItemModel = mongoose.models.Item || mongoose.model<ItemDataType>("Item", ItemSchema)
+export const UserModel = mongoose.models.User || mongoose.model<UserDataType>("User", UserSchema)
